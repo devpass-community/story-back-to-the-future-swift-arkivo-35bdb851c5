@@ -16,8 +16,18 @@ extension Date {
     }
     
     func travelToFuture(years: Int) -> String? {
-     
+
         // TODO
+        let date = Date()
+    
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+       
+        if let date = formatter.calendar.date(byAdding: .year, value: years, to: date){
+            return formatter.string(from: date)
+        }
+        
+        
         return nil
     }
 }
